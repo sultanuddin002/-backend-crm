@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "leads",
+  "info": {
+    "singularName": "lead",
+    "pluralName": "leads",
+    "displayName": "Lead",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "next_task": {
+      "type": "text"
+    },
+    "call_outcome": {
+      "type": "string"
+    },
+    "agent_notes": {
+      "type": "text"
+    },
+    "call_date": {
+      "type": "datetime"
+    },
+    "campaign": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::campaign.campaign",
+      "inversedBy": "leads"
+    },
+    "agent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::agent.agent",
+      "inversedBy": "leads"
+    }
+  }
+}
